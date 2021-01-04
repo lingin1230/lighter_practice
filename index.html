@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>追蹤滑鼠小光點</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <style>
+
+      :root {
+
+        --radius: 40px;
+        --MouseX: ;
+        --MouseY: ;
+        --factor: 1;
+        --scale: ;
+      }
+
+      body{
+
+        background-color: #000;
+      }
+
+      #ball{
+
+        width: var(--radius);
+        height: var(--radius);
+        border-radius: 50%;
+        background-color: #fbd771;
+        position: absolute;
+
+        transform: translate(calc(var(--MouseX) * 1px - var(--radius) / 2),
+        calc(var(--MouseY) * 1px - var(--radius) / 2));
+
+      }
+
+      .halo{
+
+        width: var(--radius);
+        height: var(--radius);
+        border-radius: 50%;
+        background-color: #fbd771;
+        opacity:0.15;
+        position: absolute;
+
+        transform: scale(calc(var(--factor) * var(--scale)));
+      }
+
+      .hale:nth-of-type(1) {
+
+        --factor: 0.3;
+      }
+
+      .hale:nth-of-type(2) {
+
+        --factor: 0.5;
+      }
+
+      .hale:nth-of-type(3) {
+
+        --factor: 0.9;
+      }
+
+
+    </style>
+</head>
+
+<body>
+
+  <div id="ball">
+
+    <div class="halo"></div>
+    <div class="halo"></div>
+    <div class="halo"></div>
+
+  </div>
+
+
+  <script type="text/javascript" src="mouseScript.js"></script>
+
+</body>
+</html>
